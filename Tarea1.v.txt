@@ -1,0 +1,23 @@
+module tarea;
+  reg [3:0] a,b,c;
+  
+  reg clk = 0;
+
+  initial begin
+    $dumpfile("dump.vcd"); 
+    $dumpvars;
+    
+    repeat (5) begin
+      #5
+      clk = !clk;
+      a = $random;
+      b = $random;
+      c = $random;
+    end
+    repeat (5) begin
+      #5
+      clk = !clk;
+    end
+  end
+  
+endmodule
