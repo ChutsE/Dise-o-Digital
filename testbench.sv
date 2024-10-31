@@ -1,8 +1,14 @@
-module tarea;
+module testbench;
   reg [3:0] a,b,c;
-  
   reg clk = 0;
-
+  reg [5:0] out;
+  
+  sum sum_module (.a(a),
+                  .b(b),
+                  .c(c),
+                  .out(out)
+                 );
+  
   initial begin
     $dumpfile("dump.vcd"); 
     $dumpvars;
