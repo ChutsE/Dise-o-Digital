@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 11/12/2024 06:02:02 PM
+// Create Date: 11/13/2024 05:24:02 PM
 // Design Name: 
-// Module Name: adder_design
+// Module Name: adder
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,9 +20,12 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module adder_design(
-    input wire [3:0] a,b,
-    output wire [4:0] out
+module adder #(parameter WIDTH = 4)( 
+    output [WIDTH - 1: 0] result,
+    output carry_out,
+    input [WIDTH - 1: 0] a,
+    input [WIDTH - 1: 0] b 
     );
-    assign out = a + b;
+    
+    assign {carry_out, result} = a + b;
 endmodule
